@@ -45,7 +45,7 @@ void setup()
   aerationStartTime = millis() + THREE_HOURS;
   servoSwitchTime = millis() + ONE_HOUR;
 
-	lcd.backlight();
+  lcd.noBacklight();
   pinMode(H_RELEY_PIN, OUTPUT);
   pinMode(T_RELEY_PIN, OUTPUT);
   pinMode(SERVO_PIN, OUTPUT);
@@ -55,7 +55,7 @@ void setup()
 void loop()
 {
   lcd.clear();
-	sensor.requestTemperatures();
+  sensor.requestTemperatures();
   float t = sensor.getTempCByIndex(0);
   lcd.print("t:");
   lcd.print(t);
