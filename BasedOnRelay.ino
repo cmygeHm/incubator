@@ -39,13 +39,14 @@ bool servoState = false;
 void setup()
 {
   lcd.begin();
+  lcd.noBacklight();
+  
   sensor.begin();
   dht.begin();
 
   aerationStartTime = millis() + THREE_HOURS;
   servoSwitchTime = millis() + ONE_HOUR;
-
-  lcd.noBacklight();
+  
   pinMode(H_RELEY_PIN, OUTPUT);
   pinMode(T_RELEY_PIN, OUTPUT);
   pinMode(SERVO_PIN, OUTPUT);
